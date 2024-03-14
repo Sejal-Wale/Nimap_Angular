@@ -1,0 +1,249 @@
+<!-- bootstrap link -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+  integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+<!-- first section and nav bar -->
+<div class="bgbox">
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container mt-5">
+      <a class="navbar-brand" class="logo" href="">DEMO APP</a>
+
+      <div class="collapse navbar-collapse" id="navbarNav" class="right">
+        <ul class="navbar-nav me-5">
+          <li class="nav-item">
+            <a class="nav-link active1 text-light" aria-current="page" routerLink="/home" href="#"
+              style="font-size: 20px;">HOME</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-light" routerLink="/profile" style="font-size: 20px;">ABOUT US</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-light" routerLink="active" style="font-size: 20px;">JOBS</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-light" routerLink="#" style="font-size: 20px;">CLIENTS</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-light" routerLink="#" style="font-size: 20px;">EMPLOYERS</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-light" routerLink="" style="font-size: 20px;">CONTACT US</a>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <!-- second section -->
+  <div class="main">
+    <div class="heading">
+      <h1><i>I'm looking for..</i></h1>
+    </div>
+    <br>
+    <form>
+      <div class="mb-3">
+        <input type="text" class="form-control" value="Enter a job Description">
+        <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal" style="margin-left: 50px;"> search</button> -->
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal"
+          style="margin-left: 50px;"> <i class="bi bi-search"></i>search</button>
+      </div><br>
+
+      <div class="sec">
+        <div class="justify-content-around">
+          <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          <label class="text ps-3 pe-3">Full Time</label>
+          <input type="checkbox" class="form-check-input" id="exampleCheck2">
+          <label class="text ps-3 pe-4">Part time/casual/freelance</label>
+
+          <select class="select ">
+            <option selected>Select your location</option>
+            <option value="1">Pune</option>
+            <option value="2">Mumbai</option>
+            <option value="3">Nagpur</option>
+          </select>
+        </div>
+
+
+      </div>
+    </form>
+  </div>
+
+  <br>
+  <br>
+  <!-- button pop -->
+  <form>
+    <div class="wrapper">
+      <button class="btn btn-primary" (click)="openpopup()">Register</button>
+    </div>
+    <div class="overlay" *ngIf="show">
+      <div class="content mt-5">
+        <div class="close" (click)="closepopup()">&times;
+        </div>
+        <div class="box bg-primary">
+          <h5 style="color: white; padding: 20px;  ">Register</h5>
+        </div>
+
+        <div class="d-flex">
+          <div class="photo">
+            <img src="assets/girlicon.jpeg" alt="img" height="150px" width="130px" style="padding-left: 20px;">
+            <p style="color: rgb(76, 76, 252);">uplod your photo</p>
+          </div>
+          <div class="infodata">
+            <div class="id1 d-flex col-2-lg mt-2">
+              <input type="text" class="form-control" style="width: 70%;" value="First Name">
+              <input type="text" class="form-control" style="width: 70%;" value="Last Name">
+            </div>
+            <br>
+            <div>
+              <input type="text" class="form-control" value="Email">
+            </div>
+            <br>
+            <div>
+              <input type="text" class="form-control" value="(541)754-3010">
+            </div>
+            <div>
+              <label class="age" for="age">Age:
+                <input type="range" id="age" name="age" min="20" max="60" height="10px">
+              </label>
+            </div>
+            <br>
+            <div>
+              <select id="state" name="state" required style="width: 70%;">
+                <option value="" selected>State</option>
+                <option value="MH">Maharashtra</option>
+                <option value="GJ">Gujrat</option>
+                <option value="KA">Karnataka</option>
+                <option value="">Goa</option>
+                <option value="">Madhya Pradesh </option>
+
+              </select><br>
+              <br>
+
+              <select id="country" value="country" name="country" required style="width: 70%;">
+                <option value="" selected>Country</option>
+                <option value="MH">Indian</option>
+                <option value="GJ">USA</option>
+                <option value="KA">UK</option>
+              </select><br>
+              <br>
+
+              <select id="address" value="address" name="address" required
+                style="width: 70%; margin-left: 75px; padding: 5px; ">
+                <option selected>Adrress</option>
+
+                <option>Home</option>
+                <option>Company</option>
+
+              </select><br><br>
+
+
+              <input type="text" id="tags" name="tag" class="form-control" placeholder="Tag"
+                style="width: 70%;"><br><br>
+
+              <div>
+                <button class="btn btn-secondary" id="btn1">Cricket <i class="bi bi-x"
+                    style="padding-left: 5px; color: yellow;"></i></button>
+                <button class="btn btn-secondary" style="margin-left: 10px;"> Football<i class="bi bi-x"
+                    style="padding-left: 5px; color: yellow;"></i></button>
+                <button class="btn btn-secondary" style="margin-left: 10px;">Hockey<i class="bi bi-x"
+                    style="padding-left: 5px; color: yellow;"></i></button>
+              </div>
+              <label>
+                <input type="checkbox" id="check"> Subscribe to Newsletter
+              </label><br>
+              <button type="button" class="btn btn-outline-secondary text-dark"
+                style=" margin-left:220px;">Cancel</button>
+
+              <button class="btn btn-primary" style="margin-left: 20px;" (click)="goToPage('profile')">Submit</button>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </form>
+  <!-- button pop end-->
+
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <div style="text-align:center">
+    <span class="dot" style="background-color: rgb(181, 181, 181); margin-left: 80px;"></span>
+    <span class="dot" style="margin-left: 5px;"></span>
+    <span class="dot" style="margin-left: 5px;"></span>
+    <span class="dot" style="margin-left: 5px;"></span>
+  </div>
+
+</div>
+<br>
+<br>
+<div class="texts" style="text-align: center;">
+  <h4><i>We're leaders in</i></h4>
+  <h2>Creative digital Recruitment</h2>
+
+  <div class="line text-primary">
+    _______________________
+  </div>
+  <br>
+  <p>Based in Surry Hills, the creative hub of Sydney we are surrounded by creativity <br>and that reflects on the type
+    of jobs we recruit for.</p>
+  <br>
+  <button class="btn btn-outline-primary" style="text-align: center; padding-top: 15px;">
+    <h5 style="color: skyblue">FIND OUT MORE ABOUT US!</h5>
+  </button>
+</div>
+<br>
+
+<section class="container-fluid bg-dark border border-primary ">
+  <br>
+  <h4 class="text-white pt-5 text-center">Subscribe to our Job Seeker Mailing List</h4><br>
+  <form>
+    <div class="formd" style="text-align: center;">
+      <button class="btn btn-outline-primary"> <i>Enter Your Email Address </i><i class="bi bi-envelope"
+          style="padding-left: 40px;"></i>
+      </button>
+    </div>
+    <br>
+    <br>
+  </form>
+
+</section>
+<br>
+<br>
+<div class="last">
+  <div class="row">
+    <div class="col">
+      <div class="data">
+        <i class="bi bi-envelope" style="font-size: 30px; color: blue;"></i>
+        <input typle="text" style="margin-left: 5px;">
+      </div>
+      <div class="data1">
+        <p style="padding-left: 90px;">Copyright © 2014 Two Bytes Consulting. <b>Terms & Policies.</b></p>
+        <div class="datas" style="padding-left: 65%;">
+          <p class="btn btn-outline-primary"><i class="bi bi-twitter"></i>Tweet</p>
+          <p class="btn btn-outline-primary" style="margin-left: 4px;">692</p>
+
+          <p class="btn btn-outline-primary" style="margin-left: 4px;"><i class="bi bi-facebook"></i>Like</p>
+          <p class="btn btn-outline-primary" style="margin-left: 4px;">117</p>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+<router-outlet></router-outlet>
